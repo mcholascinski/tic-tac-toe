@@ -11,9 +11,8 @@ const winnerIcon = document.querySelector("#winner-icon");
 const modalBtnOne = document.querySelector("#modal-btn-one");
 const modalBtnTwo = document.querySelector("#modal-btn-two");
 
-
 // all possible wins
-let possibleWins = [
+const possibleWins = [
     ["0", "1", "2"],
     ["3", "4", "5"],
     ["6", "7", "8"],
