@@ -1,4 +1,8 @@
-const game = document.querySelector(".game")
+const newGame = document.querySelector(".new-game");
+const chooseX = document.querySelector("#choose-x-btn");
+const chooseO = document.querySelector("#choose-o-btn");
+const newGamePlayer = document.querySelector("#new-game-player");
+const game = document.querySelector(".game");
 // all cells on the game board
 const cells = document.querySelectorAll(".cell");
 // restart game button
@@ -31,6 +35,7 @@ let currentUser;
 let scoreX;
 let scoreO;
 let playerOne;
+let chosenPlayer;
 
 function showModalWin() {
     modalBackground.style.display = "block";
@@ -44,6 +49,7 @@ function showModalWin() {
         modalBackground.style.display = "none";
         modal.style.display = "none";
         game.style.display = "none";
+        newGame.style.display = "block";
     })
     modalBtnTwo.addEventListener("click", () => {
         modalBackground.style.display = "none";
@@ -53,6 +59,9 @@ function showModalWin() {
 }
 
 function move(clickedCellId) {
+    if (!possibleMoves.includes(clickedCellId)) {
+        return;
+    }
     possibleMoves = possibleMoves.filter(id => id !== clickedCellId); // remove clicked cell from possible moves array
     if (currentUser === "X") {
         cells[parseInt(clickedCellId)].innerHTML = `<img src="./assets/icon-x.svg" alt=""></img>`; // add proper icon on clicked cell
@@ -122,6 +131,24 @@ function startGame(state, player) {
     }
 }
 
+chooseX.addEventListener("click", () => {
+    chosenPlayer = "X";
+    chooseX.classList.add("mark-btn-light");
+    chooseO.classList.remove("mark-btn-light");
+});
+
+chooseO.addEventListener("click", () => {
+    chosenPlayer = "O";
+    chooseO.classList.add("mark-btn-light");
+    chooseX.classList.remove("mark-btn-light");
+});
+
+newGamePlayer.addEventListener("click", () => {
+    newGame.style.display = "none";
+    game.style.display = "block";
+    startGame("new", chosenPlayer);
+})
+
 cells.forEach((cell) => {
     cell.addEventListener("click", () => {
       const clickedCellId = cell.id;
@@ -136,7 +163,5 @@ cells.forEach((cell) => {
   });
 
 restartBtn.addEventListener("click", () => {
-    startGame("new");
+    startGame("new", chosenPlayer);
   });
-
-startGame("new", "X");
