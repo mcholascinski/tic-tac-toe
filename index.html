@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Frontend Mentor | Tic Tac Toe</title>
+</head>
+<body>
+  <div class="container">
+
+  <!-- New game menu start -->
+
+   <div class="new-game">
+      <img src="./assets/logo.svg" alt="logo">
+      <div class="pick-mark-container">
+        <h4>Pick player 1's mark</h4>
+        <div class="marks-container">
+          <div class="mark-btn mark-btn-dark">
+            <img src="./assets/icon-o.svg" alt="mark o">
+          </div>
+          <div class="mark-btn mark-btn-light">
+            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" id="mark-x"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <p>Remember: X goes first</p>
+      </div>
+      <button class="btn-primary-one">New Game (vs CPU)</button>
+      <button class="btn-primary-two">New Game (vs player)</button>
+    </div>
+
+  <!-- New game menu end
+
+  <!-- Game board start -->
+
+    <div class="game">
+
+      <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <div class="current-player">
+          <img src="./assets/icon-o.svg" alt="mark o">
+          <!-- <img src="./assets/icon-x.svg" alt="mark x"> -->
+          <h4>turn</h4>
+        </div>
+        <button id="restart">
+          <img src="./assets/icon-restart.svg" alt="restart">
+        </button>
+      </header>
+
+      <div class="game-board">
+        <div class="cell" id="0"></div>
+        <div class="cell" id="1"></div>
+        <div class="cell" id="2"></div>
+        <div class="cell" id="3"></div>
+        <div class="cell" id="4"></div>
+        <div class="cell" id="5"></div>
+        <div class="cell" id="6"></div>
+        <div class="cell" id="7"></div>
+        <div class="cell" id="8"></div>
+      </div>
+
+      <footer>
+        <div class="x-result">
+          <p>X (<span>You</span>)</p>
+          <h2>0</h2>
+        </div>
+        <div class="ties-result">
+          <p>Ties</p>
+          <h2>0</h2>
+        </div>
+        <div class="y-result">
+          <p>O (<span>CPU</span>)</p>
+          <h2>0</h2>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <div class="modal-background"></div>
+  <div class="modal">
+    <div class="modal-container">
+      <h4 id="modal-small-header"></h4>
+      <h1 id="modal-large-header"><span id="winner-icon"><img src="./assets/icon-o.svg" alt="mark o"></span>takes the round</h1>
+      <button class="btn-secondary-two" id="modal-btn-one"></button>
+      <button class="btn-secondary-one" id="modal-btn-two"></button>
+    </div>
+  </div>
+
+<script src="./app.js"></script>
+</body>
+</html>
