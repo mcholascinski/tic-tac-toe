@@ -239,6 +239,25 @@ footer {
     background-color: var(--light-blue);
 }
 
+.tile {
+    border-radius: 15px;
+    text-align: center;
+    padding: 0.8125rem;
+    color: var(--dark-navy);
+}
+
+.x-result {
+    background-color: var(--light-blue);
+}
+
+.ties-result {
+    background-color: var(--silver);
+}
+
+.o-result {
+    background-color: var(--light-yellow);
+}
+
 .modal-background {
     display: none;
     position:fixed;
@@ -256,6 +275,7 @@ footer {
     justify-content: center;
     width: 100%;
     background-color: var(--dark-navy);
+    height: 266px;
 }
 
 .modal-container {
@@ -273,6 +293,10 @@ footer {
 
 .blue-text {
     color: var(--light-blue);
+}
+
+.silver-text {
+    color: var(--silver);
 }
 
 #new-game-cpu-btn {

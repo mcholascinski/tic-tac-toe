@@ -39,12 +39,12 @@
 
       <header>
         <img src="./assets/logo.svg" alt="logo">
-        <div class="current-player">
+        <div class="tile current-player">
           <img src="./assets/icon-o.svg" alt="mark o">
           <!-- <img src="./assets/icon-x.svg" alt="mark x"> -->
           <h4>turn</h4>
         </div>
-        <button id="restart">
+        <button tile id="restart">
           <img src="./assets/icon-restart.svg" alt="restart">
         </button>
       </header>
@@ -62,17 +62,17 @@
       </div>
 
       <footer>
-        <div class="x-result">
-          <p>X (<span>You</span>)</p>
-          <h2>0</h2>
+        <div class="tile x-result">
+          <p>X (<span id="x-player">P1</span>)</p>
+          <h2 id="x-points">0</h2>
         </div>
-        <div class="ties-result">
+        <div class="tile ties-result">
           <p>Ties</p>
-          <h2>0</h2>
+          <h2 id="ties-points">0</h2>
         </div>
-        <div class="y-result">
-          <p>O (<span>CPU</span>)</p>
-          <h2>0</h2>
+        <div class="tile o-result">
+          <p>O (<span id="o-player">P2</span>)</p>
+          <h2 id="o-points">0</h2>
         </div>
       </footer>
 
@@ -84,11 +84,14 @@
   <div class="modal">
     <div class="modal-container">
       <h4 id="modal-small-header"></h4>
-      <h1 id="modal-large-header"><span id="winner-icon"><img src="./assets/icon-o.svg" alt="mark o"></span>takes the round</h1>
+      <h1 id="modal-large-header"><span id="winner-icon"></span><span id="modal-large-header-text"></span></h1>
       <button class="btn-secondary-two" id="modal-btn-one"></button>
       <button class="btn-secondary-one" id="modal-btn-two"></button>
+      <button class="btn-secondary-two" id="modal-btn-one-restart"></button>
+      <button class="btn-secondary-one" id="modal-btn-two-restart"></button>
     </div>
   </div>
+
 
 <script src="./app.js"></script>
 </body>
